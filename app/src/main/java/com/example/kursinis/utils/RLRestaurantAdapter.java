@@ -41,6 +41,11 @@ public class RLRestaurantAdapter extends RecyclerView.Adapter<RLRestaurantAdapte
         holder.address.setText("📍 " + r.getAddress());
         holder.phone.setText("📞 " + r.getPhoneNumber());
 
+        String hours = r.getWorkHours();
+        holder.workHours.setText(hours != null && !hours.isEmpty()
+                ? "🕒 " + hours
+                : "🕒 Darbo valandos nenurodytos");
+
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, RestaurantCuisineActivity.class);
             intent.putExtra("restaurantId", r.getId());
@@ -54,13 +59,14 @@ public class RLRestaurantAdapter extends RecyclerView.Adapter<RLRestaurantAdapte
         return restaurants.size();
     }
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView name, address, phone;
+        TextView name, address, phone, workHours;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.messageContent);
             address = itemView.findViewById(R.id.orderDate);
             phone = itemView.findViewById(R.id.restaurantPhone);
+            workHours = itemView.findViewById(R.id.restaurantWorkHours);
         }
     }
 }
