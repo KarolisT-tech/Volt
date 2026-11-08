@@ -25,5 +25,7 @@ public class Restaurant extends BasicUser {
         this.foodOrders = new ArrayList<>();
     }
 
-
+    public String getWorkHours() {
+        return workHours;
+    }
 }
