@@ -39,7 +39,7 @@ public class RLOrderAdapterCustomer extends RecyclerView.Adapter<RLOrderAdapterC
 
         holder.name.setText(fo.getName());
         holder.date.setText("⏱" + fo.getDateCreated().toString());
-        holder.status.setText("\uD83D\uDE9A" + fo.getOrderStatus().name());
+        holder.status.setText("\uD83D\uDE9A " + fo.getOrderStatus().getDisplayName());
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, OrderCustomerActivity.class);

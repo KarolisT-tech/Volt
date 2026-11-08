@@ -46,7 +46,7 @@ public class RLOrderAdapterDriver extends RecyclerView.Adapter<RLOrderAdapterDri
 
         holder.name.setText(fo.getName());
         holder.date.setText("⏱" + fo.getDateCreated().toString());
-        holder.status.setText("\uD83D\uDE9A" + fo.getOrderStatus().name());
+        holder.status.setText("\uD83D\uDE9A " + fo.getOrderStatus().getDisplayName());
 
         if(onOrderClickListener != null){
             holder.itemView.setOnClickListener(v -> {
