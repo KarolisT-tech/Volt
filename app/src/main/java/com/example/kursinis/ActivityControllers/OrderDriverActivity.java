@@ -81,7 +81,7 @@ public class OrderDriverActivity extends AppCompatActivity {
                     name.setText(foodOrder.getName());
                     price.setText("\uD83D\uDCB2" + String.valueOf(foodOrder.getPrice()));
                     date.setText("\uD83D\uDD5B" + foodOrder.getDateCreated().toString());
-                    status.setText("\uD83D\uDE9A" + foodOrder.getOrderStatus().name());
+                    status.setText("\uD83D\uDE9A " + foodOrder.getOrderStatus().getDisplayName());
                     restaurant.setText("\uD83C\uDF7D\uFE0F" + foodOrder.getRestaurant().getName());
                     customer.setText("\uD83E\uDDCD" + foodOrder.getBuyer().getName() + " " + foodOrder.getBuyer().getSurname());
                     items.addAll(arr);
